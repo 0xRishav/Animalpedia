@@ -22,24 +22,26 @@ export default function App() {
       setInpt("We dont have this emoji");
     }
   }
-  function animalClickHandler(animal){
+  function animalClickHandler(animal) {
     setInpt(emojiDictionary[animal]);
   }
 
   return (
     <div className="App">
       <h1>Animalpedia</h1>
-      <input onChange={changeHandler}></input>
+      <input placeholder="Enter an emoji" onChange={changeHandler}></input>
       <div>
         <h2>{inpt}</h2>
       </div>
       <h3>Animals we know</h3>
-      {animalList.map(function(animal){
-        return(
-          <span onClick={(()=> animalClickHandler(animal))}
-          key={animal} 
-          style={{padding:'1rem',fontSize:'2rem', cursor:'pointer'}}>
-          {animal}
+      {animalList.map(function (animal) {
+        return (
+          <span
+            onClick={() => animalClickHandler(animal)}
+            key={animal}
+            style={{ padding: "1rem", fontSize: "2rem", cursor: "pointer" }}
+          >
+            {animal}
           </span>
         );
       })}
